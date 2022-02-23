@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/cg-draft" rel="stylesheet">
   <meta content="Bikeshed version 2e3c4c68b, updated Fri Jan 14 14:49:00 2022 -0800" name="generator">
   <link href="https://wicg.github.io/webusb" rel="canonical">
-  <meta content="e1b37d2a2893a75f3823dc2e2fe7635c22c1bfc4" name="document-revision">
+  <meta content="5aaf696938ed1dc073f8cc8da8c809e9e5019f41" name="document-revision">
 <style>
 table {
   border-collapse: collapse;
@@ -677,7 +677,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">WebUSB API</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2022-02-20">20 February 2022</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2022-02-23">23 February 2022</time></p>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2275,9 +2275,9 @@ device by performing <a data-link-type="dfn" href="#get-descriptor" id="ref-for-
      <li data-md>
       <p>If the result of <a data-link-type="dfn" href="#find-if-the-interface-is-claimed" id="ref-for-find-if-the-interface-is-claimed">finding if the interface is claimed</a> with <var>interface</var> is not <code>true</code>, return.</p>
      <li data-md>
-      <p>Let <var>currAlternateInterface</var> be the result of <a data-link-type="dfn" href="#find-the-alternateinterface-for-the-current-alternate-setting" id="ref-for-find-the-alternateinterface-for-the-current-alternate-setting">finding the alternateInterface for the current alternate setting</a> with <var>interface</var>.</p>
+      <p>Let <var>currAlternateInterface</var> be the result of <a data-link-type="dfn" href="#find-the-alternate-interface-for-the-current-alternate-setting" id="ref-for-find-the-alternate-interface-for-the-current-alternate-setting">finding the alternate interface for the current alternate setting</a> with <var>interface</var>.</p>
      <li data-md>
-      <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-iterate" id="ref-for-list-iterate">For each</a> <var>endpoint</var> of <var>currAlternateInterface</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints" id="ref-for-dom-usbalternateinterface-endpoints">endpoints</a></code>:</p>
+      <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-iterate" id="ref-for-list-iterate">For each</a> <var>endpoint</var> of <var>currAlternateInterface</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints-slot" id="ref-for-dom-usbalternateinterface-endpoints-slot">[[endpoints]]</a></code>:</p>
       <ol>
        <li data-md>
         <p>Abort all transfers currently scheduled on <var>endpoint</var> and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#reject" id="ref-for-reject②">reject</a> the associated promises with an <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#aborterror" id="ref-for-aborterror">AbortError</a></code>.</p>
@@ -2348,9 +2348,9 @@ device by performing <a data-link-type="dfn" href="#get-descriptor" id="ref-for-
        <li data-md>
         <p>If the result of <a data-link-type="dfn" href="#find-if-the-interface-is-claimed" id="ref-for-find-if-the-interface-is-claimed①">finding if the interface is claimed</a> with <var>interface</var> is not <code>true</code>, continue.</p>
        <li data-md>
-        <p>Let <var>alternate</var> be the result of <a data-link-type="dfn" href="#find-the-alternateinterface-for-the-current-alternate-setting" id="ref-for-find-the-alternateinterface-for-the-current-alternate-setting①">finding the alternateInterface for the current alternate setting</a> with <var>interface</var>.</p>
+        <p>Let <var>alternate</var> be the result of <a data-link-type="dfn" href="#find-the-alternate-interface-for-the-current-alternate-setting" id="ref-for-find-the-alternate-interface-for-the-current-alternate-setting①">finding the alternate interface for the current alternate setting</a> with <var>interface</var>.</p>
        <li data-md>
-        <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-iterate" id="ref-for-list-iterate③">For each</a> <var>endpoint</var> of <var>alternate</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints-slot" id="ref-for-dom-usbalternateinterface-endpoints-slot">[[endpoints]]</a></code>:</p>
+        <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-iterate" id="ref-for-list-iterate③">For each</a> <var>endpoint</var> of <var>alternate</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints-slot" id="ref-for-dom-usbalternateinterface-endpoints-slot①">[[endpoints]]</a></code>:</p>
         <ol>
          <li data-md>
           <p>If <var>endpoint</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbendpoint-endpointaddress-slot" id="ref-for-dom-usbendpoint-endpointaddress-slot">[[endpointAddress]]</a></code> is equal to <var>endpointAddress</var>, return <var>endpoint</var></p>
@@ -2603,7 +2603,7 @@ abort these steps.</p>
     steps <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel⑤">in parallel</a>: 
     <ol>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this②⑤">this</a> and <var>promise</var> and abort these steps if promise is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this②⑤">this</a> and <var>promise</var> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
       <p>Let <var>activeConfiguration</var> be the result of <a data-link-type="dfn" href="#find-the-current-configuration" id="ref-for-find-the-current-configuration④">finding the current configuration</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this②⑥">this</a>.</p>
      <li data-md>
@@ -2629,7 +2629,7 @@ over <var>interfaces</var>[<var>interfaceIndex</var>] for the current execution 
     steps <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel⑥">in parallel</a>: 
     <ol>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured①">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this②⑨">this</a> and <var>promise</var> and abort these steps if promise is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured①">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this②⑨">this</a> and <var>promise</var> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
       <p>Let <var>activeConfiguration</var> be the result of <a data-link-type="dfn" href="#find-the-current-configuration" id="ref-for-find-the-current-configuration⑤">finding the current configuration</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this③⓪">this</a>.</p>
      <li data-md>
@@ -2655,7 +2655,7 @@ control over <var>interfaces</var>[<var>interfaceIndex</var>].</p>
     following steps <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel⑦">in parallel</a>: 
     <ol>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured②">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this③④">this</a> and <var>promise</var> and abort these steps if promise is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured②">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this③④">this</a> and <var>promise</var> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
       <p>Let <var>activeConfiguration</var> be the result of <a data-link-type="dfn" href="#find-the-current-configuration" id="ref-for-find-the-current-configuration⑥">finding the current configuration</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this③⑤">this</a>.</p>
      <li data-md>
@@ -2690,7 +2690,7 @@ to <var>alternateSetting</var>.</p>
     when invoked, MUST return a new <code class="idl"><a data-link-type="idl" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects⑨">Promise</a></code> <var>promise</var> and run the following steps <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel⑧">in parallel</a>: 
     <ol>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured③">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this③⑧">this</a> and <var>promise</var> and abort these steps if promise is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured③">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this③⑧">this</a> and <var>promise</var> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
       <p><a data-link-type="dfn" href="#check-the-validity-of-the-control-transfer-parameters" id="ref-for-check-the-validity-of-the-control-transfer-parameters">Check the validity of the control transfer parameters</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this③⑨">this</a> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
@@ -2705,12 +2705,12 @@ write data received in response to this transfer.</p>
      <li data-md>
       <p>Let <var>result</var> be a new <code class="idl"><a data-link-type="idl" href="#usbintransferresult" id="ref-for-usbintransferresult②">USBInTransferResult</a></code>.</p>
      <li data-md>
-      <p>If data was received from <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④①">this</a> create a new <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer">ArrayBuffer</a></code> containing
+      <p>If data was received from the device create a new <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer">ArrayBuffer</a></code> containing
 the first <var>bytesTransferred</var> bytes of <var>buffer</var> and set <code><var>result</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbintransferresult-data" id="ref-for-dom-usbintransferresult-data①">data</a></code></code> to a new <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-DataView" id="ref-for-idl-DataView⑥">DataView</a></code> constructed over it.</p>
      <li data-md>
-      <p>If <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④②">this</a> responded by stalling the <a data-link-type="dfn" href="#default-endpoint" id="ref-for-default-endpoint①">default control pipe</a> set <code><var>result</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbintransferresult-status" id="ref-for-dom-usbintransferresult-status①">status</a></code></code> to <code class="idl"><a data-link-type="idl" href="#dom-usbtransferstatus-stall" id="ref-for-dom-usbtransferstatus-stall">"stall"</a></code>.</p>
+      <p>If the device responded by stalling the <a data-link-type="dfn" href="#default-endpoint" id="ref-for-default-endpoint①">default control pipe</a> set <code><var>result</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbintransferresult-status" id="ref-for-dom-usbintransferresult-status①">status</a></code></code> to <code class="idl"><a data-link-type="idl" href="#dom-usbtransferstatus-stall" id="ref-for-dom-usbtransferstatus-stall">"stall"</a></code>.</p>
      <li data-md>
-      <p>If <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④③">this</a> responded with more than <var>length</var> bytes of data set <code><var>result</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbintransferresult-status" id="ref-for-dom-usbintransferresult-status②">status</a></code></code> to <code class="idl"><a data-link-type="idl" href="#dom-usbtransferstatus-babble" id="ref-for-dom-usbtransferstatus-babble">"babble"</a></code> and
+      <p>If the device responded with more than <var>length</var> bytes of data set <code><var>result</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbintransferresult-status" id="ref-for-dom-usbintransferresult-status②">status</a></code></code> to <code class="idl"><a data-link-type="idl" href="#dom-usbtransferstatus-babble" id="ref-for-dom-usbtransferstatus-babble">"babble"</a></code> and
 otherwise set it to <code class="idl"><a data-link-type="idl" href="#dom-usbtransferstatus-ok" id="ref-for-dom-usbtransferstatus-ok">"ok"</a></code>.</p>
      <li data-md>
       <p>If the transfer fails for any other reason <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#reject" id="ref-for-reject②①">reject</a> <var>promise</var> with a <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#networkerror" id="ref-for-networkerror④">NetworkError</a></code> and abort these steps.</p>
@@ -2724,9 +2724,9 @@ otherwise set it to <code class="idl"><a data-link-type="idl" href="#dom-usbtran
     steps <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel⑨">in parallel</a>: 
     <ol>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured④">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④④">this</a> and <var>promise</var> and abort these steps if promise is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured④">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④①">this</a> and <var>promise</var> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-the-validity-of-the-control-transfer-parameters" id="ref-for-check-the-validity-of-the-control-transfer-parameters①">Check the validity of the control transfer parameters</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④⑤">this</a> and abort these steps if <var>promise</var> is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-the-validity-of-the-control-transfer-parameters" id="ref-for-check-the-validity-of-the-control-transfer-parameters①">Check the validity of the control transfer parameters</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④②">this</a> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
       <p>Issue a <a data-link-type="dfn" href="#control-transfer" id="ref-for-control-transfer⑥">control transfer</a> with the <a data-link-type="dfn" href="#setup-packet" id="ref-for-setup-packet">setup packet</a> populated by <var>setup</var> and the data transfer direction in <code>bmRequestType</code> set
 to "host to device" and <code>wLength</code> set to <code><var>data</var>.length</code>. Transmit <var>data</var> in the <a data-link-type="dfn" href="#data-stage" id="ref-for-data-stage">data stage</a> of
@@ -2748,11 +2748,11 @@ the transfer.</p>
     when invoked, MUST return a new <code class="idl"><a data-link-type="idl" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects①①">Promise</a></code> <var>promise</var> and run the following steps <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel①⓪">in parallel</a>: 
     <ol>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured⑤">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④⑥">this</a> and <var>promise</var> and abort these steps if promise is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured⑤">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④③">this</a> and <var>promise</var> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
       <p>Let <var>endpointAddress</var> be <code><var>endpointNumber</var> | 0x80</code> if <var>direction</var> is equal to <code class="idl"><a data-link-type="idl" href="#dom-usbdirection-in" id="ref-for-dom-usbdirection-in">"in"</a></code>, and <var>endpointNumber</var> otherwise.</p>
      <li data-md>
-      <p>Let <var>endpoint</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint" id="ref-for-find-the-endpoint">finding the endpoint</a> with <var>endpointAddress</var> and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④⑦">this</a>.</p>
+      <p>Let <var>endpoint</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint" id="ref-for-find-the-endpoint">finding the endpoint</a> with <var>endpointAddress</var> and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④④">this</a>.</p>
      <li data-md>
       <p>If <var>endpoint</var> is <code>null</code>, <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#reject" id="ref-for-reject②③">reject</a> <var>promise</var> with a <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#notfounderror" id="ref-for-notfounderror①⓪">NotFoundError</a></code> and abort these steps.</p>
      <li data-md>
@@ -2767,11 +2767,11 @@ the device to clear the halt condition on <var>endpoint</var>.</p>
     when invoked, MUST return a new <code class="idl"><a data-link-type="idl" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects①②">Promise</a></code> <var>promise</var> and run the following steps <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel①①">in parallel</a>: 
     <ol>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured⑥">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④⑧">this</a> and <var>promise</var> and abort these steps if promise is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured⑥">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④⑤">this</a> and <var>promise</var> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
       <p>Let <var>endpointAddress</var> be <code><var>endpointNumber</var> | 0x80</code> (i.e <code class="idl"><a data-link-type="idl" href="#dom-usbdirection-in" id="ref-for-dom-usbdirection-in①">"in"</a></code> direction).</p>
      <li data-md>
-      <p>Let <var>endpoint</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint" id="ref-for-find-the-endpoint①">finding the endpoint</a> with <var>endpointAddress</var> and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④⑨">this</a>.</p>
+      <p>Let <var>endpoint</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint" id="ref-for-find-the-endpoint①">finding the endpoint</a> with <var>endpointAddress</var> and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④⑥">this</a>.</p>
      <li data-md>
       <p>If <var>endpoint</var> is <code>null</code>, <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#reject" id="ref-for-reject②⑤">reject</a> <var>promise</var> with a <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#notfounderror" id="ref-for-notfounderror①①">NotFoundError</a></code> and abort these steps.</p>
      <li data-md>
@@ -2785,14 +2785,14 @@ the device to clear the halt condition on <var>endpoint</var>.</p>
      <li data-md>
       <p>Let <var>result</var> be a new <code class="idl"><a data-link-type="idl" href="#usbintransferresult" id="ref-for-usbintransferresult③">USBInTransferResult</a></code>.</p>
      <li data-md>
-      <p>If data was received from <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⓪">this</a> create a new <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer①">ArrayBuffer</a></code> containing
+      <p>If data was received from the device create a new <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer①">ArrayBuffer</a></code> containing
 the first <var>bytesTransferred</var> bytes of <var>buffer</var> and set <code><var>result</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbintransferresult-data" id="ref-for-dom-usbintransferresult-data②">data</a></code></code> to a new <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-DataView" id="ref-for-idl-DataView⑦">DataView</a></code> constructed over it.</p>
      <li data-md>
-      <p>If <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤①">this</a> responded with more than <var>length</var> bytes of data set <code><var>result</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbintransferresult-status" id="ref-for-dom-usbintransferresult-status③">status</a></code></code> to <code class="idl"><a data-link-type="idl" href="#dom-usbtransferstatus-babble" id="ref-for-dom-usbtransferstatus-babble①">"babble"</a></code>.</p>
+      <p>If the device responded with more than <var>length</var> bytes of data set <code><var>result</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbintransferresult-status" id="ref-for-dom-usbintransferresult-status③">status</a></code></code> to <code class="idl"><a data-link-type="idl" href="#dom-usbtransferstatus-babble" id="ref-for-dom-usbtransferstatus-babble①">"babble"</a></code>.</p>
      <li data-md>
       <p>If the transfer ended because <var>endpoint</var> is halted set <code><var>result</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbintransferresult-status" id="ref-for-dom-usbintransferresult-status④">status</a></code></code> to <code class="idl"><a data-link-type="idl" href="#dom-usbtransferstatus-stall" id="ref-for-dom-usbtransferstatus-stall②">"stall"</a></code>.</p>
      <li data-md>
-      <p>If <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤②">this</a> acknowledged the complete transfer set <code><var>result</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbintransferresult-status" id="ref-for-dom-usbintransferresult-status⑤">status</a></code></code> to <code class="idl"><a data-link-type="idl" href="#dom-usbtransferstatus-ok" id="ref-for-dom-usbtransferstatus-ok②">"ok"</a></code>.</p>
+      <p>If the device acknowledged the complete transfer set <code><var>result</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbintransferresult-status" id="ref-for-dom-usbintransferresult-status⑤">status</a></code></code> to <code class="idl"><a data-link-type="idl" href="#dom-usbtransferstatus-ok" id="ref-for-dom-usbtransferstatus-ok②">"ok"</a></code>.</p>
      <li data-md>
       <p>If the transfer failed for any other reason <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#reject" id="ref-for-reject②⑦">reject</a> <var>promise</var> with a <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#networkerror" id="ref-for-networkerror⑦">NetworkError</a></code> and abort these steps.</p>
      <li data-md>
@@ -2804,11 +2804,11 @@ the first <var>bytesTransferred</var> bytes of <var>buffer</var> and set <code><
     when invoked, MUST return a new <code class="idl"><a data-link-type="idl" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects①③">Promise</a></code> <var>promise</var> and run the following steps <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel①②">in parallel</a>: 
     <ol>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured⑦">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤③">this</a> and <var>promise</var> and abort these steps if promise is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured⑦">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④⑦">this</a> and <var>promise</var> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
       <p>Let <var>endpointAddress</var> be <var>endpointNumber</var> (i.e <code class="idl"><a data-link-type="idl" href="#dom-usbdirection-out" id="ref-for-dom-usbdirection-out">"out"</a></code> direction).</p>
      <li data-md>
-      <p>Let <var>endpoint</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint" id="ref-for-find-the-endpoint②">finding the endpoint</a> with <var>endpointAddress</var> and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤④">this</a>.</p>
+      <p>Let <var>endpoint</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint" id="ref-for-find-the-endpoint②">finding the endpoint</a> with <var>endpointAddress</var> and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④⑧">this</a>.</p>
      <li data-md>
       <p>If <var>endpoint</var> is <code>null</code>, <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#reject" id="ref-for-reject②⑧">reject</a> <var>promise</var> with a <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#notfounderror" id="ref-for-notfounderror①②">NotFoundError</a></code> and abort these steps.</p>
      <li data-md>
@@ -2836,11 +2836,11 @@ amount of data successfully sent to the device.</p>
     steps <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel①③">in parallel</a>: 
     <ol>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured⑧">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⑤">this</a> and <var>promise</var> and abort these steps if promise is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured⑧">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this④⑨">this</a> and <var>promise</var> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
       <p>Let <var>endpointAddress</var> be <code><var>endpointNumber</var> | 0x80</code> (i.e <code class="idl"><a data-link-type="idl" href="#dom-usbdirection-in" id="ref-for-dom-usbdirection-in②">"in"</a></code> direction).</p>
      <li data-md>
-      <p>Let <var>endpoint</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint" id="ref-for-find-the-endpoint③">finding the endpoint</a> with <var>endpointAddress</var> and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⑥">this</a>.</p>
+      <p>Let <var>endpoint</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint" id="ref-for-find-the-endpoint③">finding the endpoint</a> with <var>endpointAddress</var> and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⓪">this</a>.</p>
      <li data-md>
       <p>If <var>endpoint</var> is <code>null</code>, <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#reject" id="ref-for-reject③①">reject</a> <var>promise</var> with a <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#notfounderror" id="ref-for-notfounderror①③">NotFoundError</a></code> and abort these steps.</p>
      <li data-md>
@@ -2881,11 +2881,11 @@ into <var>buffer</var>.</p>
     following steps <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel①④">in parallel</a>: 
     <ol>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured⑨">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⑦">this</a> and <var>promise</var> and abort these steps if promise is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured⑨">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤①">this</a> and <var>promise</var> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
       <p>Let <var>endpointAddress</var> be <var>endpointNumber</var> (i.e <code class="idl"><a data-link-type="idl" href="#dom-usbdirection-out" id="ref-for-dom-usbdirection-out①">"out"</a></code> direction).</p>
      <li data-md>
-      <p>Let <var>endpoint</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint" id="ref-for-find-the-endpoint④">finding the endpoint</a> with <var>endpointAddress</var> and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⑧">this</a>.</p>
+      <p>Let <var>endpoint</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint" id="ref-for-find-the-endpoint④">finding the endpoint</a> with <var>endpointAddress</var> and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤②">this</a>.</p>
      <li data-md>
       <p>If <var>endpoint</var> is <code>null</code>, <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#reject" id="ref-for-reject③④">reject</a> <var>promise</var> with a <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#notfounderror" id="ref-for-notfounderror①④">NotFoundError</a></code> and abort these steps.</p>
      <li data-md>
@@ -2919,7 +2919,7 @@ packet.</p>
     when invoked, MUST return a new <code class="idl"><a data-link-type="idl" href="https://tc39.github.io/ecma262/#sec-promise-objects" id="ref-for-sec-promise-objects①⑥">Promise</a></code> <var>promise</var> and run the following steps <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/infrastructure.html#in-parallel" id="ref-for-in-parallel①⑤">in parallel</a>: 
     <ol>
      <li data-md>
-      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured①⓪">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⑨">this</a> and <var>promise</var> and abort these steps if promise is rejected.</p>
+      <p><a data-link-type="dfn" href="#check-if-the-device-is-configured" id="ref-for-check-if-the-device-is-configured①⓪">Check if the device is configured</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤③">this</a> and <var>promise</var> and abort these steps if <var>promise</var> is rejected.</p>
      <li data-md>
       <p>Abort all operations on the device and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#reject" id="ref-for-reject③⑦">reject</a> their associated
 promises with an <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#aborterror" id="ref-for-aborterror②">AbortError</a></code>.</p>
@@ -3082,7 +3082,7 @@ slots</a> described in the following table:</p>
      <tr>
       <td><dfn class="dfn-paneled idl-code" data-dfn-for="USBConfiguration" data-dfn-type="attribute" data-export id="dom-usbconfiguration-device-slot"><code>[[device]]</code></dfn>
       <td>&lt;always set in prose>
-      <td> The <code class="idl"><a data-link-type="idl" href="#usbdevice" id="ref-for-usbdevice①②">USBDevice</a></code> object <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⓪">this</a> belongs to. 
+      <td> The <code class="idl"><a data-link-type="idl" href="#usbdevice" id="ref-for-usbdevice①②">USBDevice</a></code> object <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤④">this</a> belongs to. 
      <tr>
       <td><dfn class="dfn-paneled idl-code" data-dfn-for="USBConfiguration" data-dfn-type="attribute" data-export id="dom-usbconfiguration-interfaces-slot"><code>[[interfaces]]</code></dfn>
       <td>An empty <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#idl-sequence" id="ref-for-idl-sequence⑧">sequence</a> of <code class="idl"><a data-link-type="idl" href="#usbinterface" id="ref-for-usbinterface①">USBInterface</a></code>
@@ -3137,9 +3137,9 @@ slots</a> described in the following table:</p>
      The <dfn class="dfn-paneled idl-code" data-dfn-for="USBConfiguration" data-dfn-type="constructor" data-export data-lt="USBConfiguration(device, configurationValue)|constructor(device, configurationValue)" id="dom-usbconfiguration-usbconfiguration"><code>USBConfiguration(<var>device</var>, <var>configurationValue</var>)</code></dfn> constructor MUST, when called, perform the following steps: 
     <ol>
      <li data-md>
-      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥①">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbconfiguration-device-slot" id="ref-for-dom-usbconfiguration-device-slot①">[[device]]</a></code> to <var>device</var>.</p>
+      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⑤">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbconfiguration-device-slot" id="ref-for-dom-usbconfiguration-device-slot①">[[device]]</a></code> to <var>device</var>.</p>
      <li data-md>
-      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥②">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbconfiguration-configurationvalue-slot" id="ref-for-dom-usbconfiguration-configurationvalue-slot②">[[configurationValue]]</a></code> to <var>configurationValue</var>.</p>
+      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⑥">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbconfiguration-configurationvalue-slot" id="ref-for-dom-usbconfiguration-configurationvalue-slot②">[[configurationValue]]</a></code> to <var>configurationValue</var>.</p>
      <li data-md>
       <p>Let <var>descriptors</var> be the result of <a data-link-type="dfn" href="#find-a-list-of-descriptors-for-a-configuration" id="ref-for-find-a-list-of-descriptors-for-a-configuration">finding a list of descriptors for a configuration</a> with <code>configurationValue</code> set to <var>configurationValue</var>.</p>
      <li data-md>
@@ -3152,9 +3152,9 @@ slots</a> described in the following table:</p>
        <li data-md>
         <p>If the <code>bInterfaceNumber</code> of the <var>descriptor</var> is in <var>seen</var>, continue.</p>
        <li data-md>
-        <p>Let <var>interface</var> be a <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#new" id="ref-for-new①">new</a> <code class="idl"><a data-link-type="idl" href="#usbinterface" id="ref-for-usbinterface②">USBInterface</a></code> object using <a data-link-type="functionish" href="#dom-usbinterface-usbinterface" id="ref-for-dom-usbinterface-usbinterface">USBInterface(<var>configuration</var>,<var>interfaceNumber</var>)</a> with <var>configuration</var> set to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥③">this</a> and <var>interfaceNumber</var> set to <code>bInterfaceNumber</code> of <var>descriptor</var>.</p>
+        <p>Let <var>interface</var> be a <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#new" id="ref-for-new①">new</a> <code class="idl"><a data-link-type="idl" href="#usbinterface" id="ref-for-usbinterface②">USBInterface</a></code> object using <a data-link-type="functionish" href="#dom-usbinterface-usbinterface" id="ref-for-dom-usbinterface-usbinterface">USBInterface(<var>configuration</var>,<var>interfaceNumber</var>)</a> with <var>configuration</var> set to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⑦">this</a> and <var>interfaceNumber</var> set to <code>bInterfaceNumber</code> of <var>descriptor</var>.</p>
        <li data-md>
-        <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-append" id="ref-for-list-append②">Append</a> <var>interface</var> to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥④">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbconfiguration-interfaces-slot" id="ref-for-dom-usbconfiguration-interfaces-slot①⓪">[[interfaces]]</a></code>.</p>
+        <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-append" id="ref-for-list-append②">Append</a> <var>interface</var> to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⑧">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbconfiguration-interfaces-slot" id="ref-for-dom-usbconfiguration-interfaces-slot①⓪">[[interfaces]]</a></code>.</p>
        <li data-md>
         <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-append" id="ref-for-list-append③">Append</a> <code>bInterfaceNumber</code> of <var>descriptor</var> to <var>seen</var>.</p>
       </ol>
@@ -3176,7 +3176,7 @@ interfaces exposed by this device configuration.</p>
      <p>The <code class="idl"><a data-link-type="idl" href="#dom-usbconfiguration-interfaces" id="ref-for-dom-usbconfiguration-interfaces②">interfaces</a></code> getter steps are:</p>
      <ol>
       <li data-md>
-       <p>Return <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⑤">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbconfiguration-interfaces-slot" id="ref-for-dom-usbconfiguration-interfaces-slot①①">[[interfaces]]</a></code>.</p>
+       <p>Return <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑤⑨">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbconfiguration-interfaces-slot" id="ref-for-dom-usbconfiguration-interfaces-slot①①">[[interfaces]]</a></code>.</p>
      </ol>
    </dl>
    <p class="issue" id="issue-7197531b"><a class="self-link" href="#issue-7197531b"></a> Include some non-normative information about device configurations. <a href="https://github.com/WICG/webusb/issues/46">[Issue #46]</a></p>
@@ -3220,7 +3220,7 @@ slots</a> described in the following table:</p>
      <tr>
       <td><dfn class="dfn-paneled idl-code" data-dfn-for="USBInterface" data-dfn-type="attribute" data-export id="dom-usbinterface-configuration-slot"><code>[[configuration]]</code></dfn>
       <td>&lt;always set in prose>
-      <td> The <code class="idl"><a data-link-type="idl" href="#usbconfiguration" id="ref-for-usbconfiguration①⓪">USBConfiguration</a></code> object <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⑥">this</a> belongs to. 
+      <td> The <code class="idl"><a data-link-type="idl" href="#usbconfiguration" id="ref-for-usbconfiguration①⓪">USBConfiguration</a></code> object <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⓪">this</a> belongs to. 
      <tr>
       <td><dfn class="dfn-paneled idl-code" data-dfn-for="USBInterface" data-dfn-type="attribute" data-export id="dom-usbinterface-interfacenumber-slot"><code>[[interfaceNumber]]</code></dfn>
       <td>&lt;always set in prose>
@@ -3289,8 +3289,8 @@ low level access through this API would.</p>
       <p>Return <var>device</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbdevice-claimedinterface-slot" id="ref-for-dom-usbdevice-claimedinterface-slot⑨">[[claimedInterface]]</a></code>[<var>interfaceIndex</var>].</p>
     </ol>
    </div>
-   <div class="algorithm" data-algorithm="find the alternateInterface for the current alternate setting">
-     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="find-the-alternateinterface-for-the-current-alternate-setting">find the alternateInterface for the current alternate setting</dfn> with the given <var>interface</var>,
+   <div class="algorithm" data-algorithm="find the alternate interface for the current alternate setting">
+     To <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="find-the-alternate-interface-for-the-current-alternate-setting">find the alternate interface for the current alternate setting</dfn> with the given <var>interface</var>,
     perform the following steps: 
     <ol>
      <li data-md>
@@ -3322,9 +3322,9 @@ low level access through this API would.</p>
      The <dfn class="dfn-paneled idl-code" data-dfn-for="USBInterface" data-dfn-type="constructor" data-export data-lt="USBInterface(configuration, interfaceNumber)|constructor(configuration, interfaceNumber)" id="dom-usbinterface-usbinterface"><code>USBInterface(<var>configuration</var>, <var>interfaceNumber</var>)</code></dfn> constructor MUST, when called, perform the following steps: 
     <ol>
      <li data-md>
-      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⑦">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-configuration-slot" id="ref-for-dom-usbinterface-configuration-slot③">[[configuration]]</a></code> to <var>configuration</var>.</p>
+      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥①">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-configuration-slot" id="ref-for-dom-usbinterface-configuration-slot③">[[configuration]]</a></code> to <var>configuration</var>.</p>
      <li data-md>
-      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⑧">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-interfacenumber-slot" id="ref-for-dom-usbinterface-interfacenumber-slot③">[[interfaceNumber]]</a></code> to <var>interfaceNumber</var>.</p>
+      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥②">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-interfacenumber-slot" id="ref-for-dom-usbinterface-interfacenumber-slot③">[[interfaceNumber]]</a></code> to <var>interfaceNumber</var>.</p>
      <li data-md>
       <p>Let <var>descriptors</var> be the result of <a data-link-type="dfn" href="#find-a-list-of-descriptors-for-a-configuration" id="ref-for-find-a-list-of-descriptors-for-a-configuration①">finding a list of descriptors for a configuration</a> with <code>configurationValue</code> set to <var>configuration</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbconfiguration-configurationvalue-slot" id="ref-for-dom-usbconfiguration-configurationvalue-slot③">[[configurationValue]]</a></code>.</p>
      <li data-md>
@@ -3338,12 +3338,12 @@ continue.</p>
 continue.</p>
        <li data-md>
         <p>If <var>descriptor</var> <a data-link-type="dfn" href="#has-a-protected-interface-class" id="ref-for-has-a-protected-interface-class">has a protected interface class</a>,
-set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⑨">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-isprotectedclass-slot" id="ref-for-dom-usbinterface-isprotectedclass-slot①">[[isProtectedClass]]</a></code> to <code>true</code>.</p>
+set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥③">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-isprotectedclass-slot" id="ref-for-dom-usbinterface-isprotectedclass-slot①">[[isProtectedClass]]</a></code> to <code>true</code>.</p>
        <li data-md>
         <p>Let <var>alternate</var> be a <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#new" id="ref-for-new②">new</a> <code class="idl"><a data-link-type="idl" href="#usbalternateinterface" id="ref-for-usbalternateinterface③">USBAlternateInterface</a></code> object
-using <a data-link-type="functionish" href="#dom-usbalternateinterface-usbalternateinterface" id="ref-for-dom-usbalternateinterface-usbalternateinterface">USBAlternateInterface(<var>deviceInterface</var>,<var>alternateSetting</var>)</a> with <var>deviceInterface</var> set to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⓪">this</a> and <var>alternateSetting</var> set to the <code>bAlternateSetting</code> of the <var>descriptor</var>.</p>
+using <a data-link-type="functionish" href="#dom-usbalternateinterface-usbalternateinterface" id="ref-for-dom-usbalternateinterface-usbalternateinterface">USBAlternateInterface(<var>deviceInterface</var>,<var>alternateSetting</var>)</a> with <var>deviceInterface</var> set to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥④">this</a> and <var>alternateSetting</var> set to the <code>bAlternateSetting</code> of the <var>descriptor</var>.</p>
        <li data-md>
-        <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-append" id="ref-for-list-append④">Append</a> <var>alternate</var> to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦①">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-alternates-slot" id="ref-for-dom-usbinterface-alternates-slot②">[[alternates]]</a></code>.</p>
+        <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-append" id="ref-for-list-append④">Append</a> <var>alternate</var> to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⑤">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-alternates-slot" id="ref-for-dom-usbinterface-alternates-slot②">[[alternates]]</a></code>.</p>
       </ol>
     </ol>
    </div>
@@ -3358,7 +3358,7 @@ field.</p>
      <p>The <code class="idl"><a data-link-type="idl" href="#dom-usbinterface-interfacenumber" id="ref-for-dom-usbinterface-interfacenumber②">interfaceNumber</a></code> getter steps are:.</p>
      <ol>
       <li data-md>
-       <p>Return <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦②">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-interfacenumber-slot" id="ref-for-dom-usbinterface-interfacenumber-slot④">[[interfaceNumber]]</a></code>.</p>
+       <p>Return <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⑥">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-interfacenumber-slot" id="ref-for-dom-usbinterface-interfacenumber-slot④">[[interfaceNumber]]</a></code>.</p>
      </ol>
     <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="USBInterface" data-dfn-type="attribute" data-export id="dom-usbinterface-alternate"><code>alternate</code></dfn>, <span> of type <a data-link-type="idl-name" href="#usbalternateinterface" id="ref-for-usbalternateinterface④">USBAlternateInterface</a>, readonly</span>
     <dd data-md>
@@ -3367,7 +3367,7 @@ by default SHALL be the one with <code>bAlternateSetting</code> equal to <code>0
      <p>The <code class="idl"><a data-link-type="idl" href="#dom-usbinterface-alternate" id="ref-for-dom-usbinterface-alternate②">alternate</a></code> getter steps are:</p>
      <ol>
       <li data-md>
-       <p>Return the result of <a data-link-type="dfn" href="#find-the-alternateinterface-for-the-current-alternate-setting" id="ref-for-find-the-alternateinterface-for-the-current-alternate-setting②">finding the alternateInterface for the current alternate setting</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦③">this</a>.</p>
+       <p>Return the result of <a data-link-type="dfn" href="#find-the-alternate-interface-for-the-current-alternate-setting" id="ref-for-find-the-alternate-interface-for-the-current-alternate-setting②">finding the alternate interface for the current alternate setting</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⑦">this</a>.</p>
      </ol>
     <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="USBInterface" data-dfn-type="attribute" data-export id="dom-usbinterface-alternates"><code>alternates</code></dfn>, <span> of type FrozenArray&lt;<a data-link-type="idl-name" href="#usbalternateinterface" id="ref-for-usbalternateinterface⑥">USBAlternateInterface</a>>, readonly</span>
     <dd data-md>
@@ -3376,7 +3376,7 @@ their <a data-link-type="dfn" href="#interface-descriptor" id="ref-for-interface
      <p>The <code class="idl"><a data-link-type="idl" href="#dom-usbinterface-alternates" id="ref-for-dom-usbinterface-alternates④">alternates</a></code> getter steps are:</p>
      <ol>
       <li data-md>
-       <p>Return <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦④">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-alternates-slot" id="ref-for-dom-usbinterface-alternates-slot③">[[alternates]]</a></code>.</p>
+       <p>Return <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⑧">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-alternates-slot" id="ref-for-dom-usbinterface-alternates-slot③">[[alternates]]</a></code>.</p>
      </ol>
     <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="USBInterface" data-dfn-type="attribute" data-export id="dom-usbinterface-claimed"><code>claimed</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://webidl.spec.whatwg.org/#idl-boolean" id="ref-for-idl-boolean③">boolean</a>, readonly</span>
     <dd data-md>
@@ -3385,7 +3385,7 @@ the interface is claimed by the current execution context and SHALL be set to <c
      <p>The <code class="idl"><a data-link-type="idl" href="#dom-usbinterface-claimed" id="ref-for-dom-usbinterface-claimed②">claimed</a></code> getter steps are:</p>
      <ol>
       <li data-md>
-       <p>Return the result of <a data-link-type="dfn" href="#find-if-the-interface-is-claimed" id="ref-for-find-if-the-interface-is-claimed⑤">finding if the interface is claimed</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⑤">this</a>.</p>
+       <p>Return the result of <a data-link-type="dfn" href="#find-if-the-interface-is-claimed" id="ref-for-find-if-the-interface-is-claimed⑤">finding if the interface is claimed</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑥⑨">this</a>.</p>
      </ol>
    </dl>
    <h3 class="heading settled" data-level="6.5" id="usbalternateinterface-interface"><span class="secno">6.5. </span><span class="content">The USBAlternateInterface Interface</span><a class="self-link" href="#usbalternateinterface-interface"></a></h3>
@@ -3416,7 +3416,7 @@ the interface is claimed by the current execution context and SHALL be set to <c
   <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://webidl.spec.whatwg.org/#idl-octet" id="ref-for-idl-octet④②"><c- b>octet</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="octet" href="#dom-usbalternateinterface-interfacesubclass" id="ref-for-dom-usbalternateinterface-interfacesubclass"><c- g>interfaceSubclass</c-></a>;
   <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://webidl.spec.whatwg.org/#idl-octet" id="ref-for-idl-octet④③"><c- b>octet</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="octet" href="#dom-usbalternateinterface-interfaceprotocol" id="ref-for-dom-usbalternateinterface-interfaceprotocol"><c- g>interfaceProtocol</c-></a>;
   <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://webidl.spec.whatwg.org/#idl-DOMString" id="ref-for-idl-DOMString①⓪"><c- b>DOMString</c-></a>? <a class="idl-code" data-link-type="attribute" data-readonly data-type="DOMString?" href="#dom-usbalternateinterface-interfacename" id="ref-for-dom-usbalternateinterface-interfacename"><c- g>interfaceName</c-></a>;
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://webidl.spec.whatwg.org/#idl-frozen-array" id="ref-for-idl-frozen-array⑦"><c- b>FrozenArray</c-></a>&lt;<a data-link-type="idl-name" href="#usbendpoint" id="ref-for-usbendpoint"><c- n>USBEndpoint</c-></a>> <a class="idl-code" data-link-type="attribute" data-readonly data-type="FrozenArray<USBEndpoint>" href="#dom-usbalternateinterface-endpoints" id="ref-for-dom-usbalternateinterface-endpoints①"><c- g>endpoints</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="idl-code" data-link-type="interface" href="https://webidl.spec.whatwg.org/#idl-frozen-array" id="ref-for-idl-frozen-array⑦"><c- b>FrozenArray</c-></a>&lt;<a data-link-type="idl-name" href="#usbendpoint" id="ref-for-usbendpoint"><c- n>USBEndpoint</c-></a>> <a class="idl-code" data-link-type="attribute" data-readonly data-type="FrozenArray<USBEndpoint>" href="#dom-usbalternateinterface-endpoints" id="ref-for-dom-usbalternateinterface-endpoints"><c- g>endpoints</c-></a>;
 };
 </pre>
    <p>Instances of <code class="idl"><a data-link-type="idl" href="#usbalternateinterface" id="ref-for-usbalternateinterface⑧">USBAlternateInterface</a></code> are created with the <a data-link-type="dfn" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots" id="ref-for-sec-object-internal-methods-and-internal-slots⑥">internal
@@ -3430,7 +3430,7 @@ slots</a> described in the following table:</p>
      <tr>
       <td><dfn class="dfn-paneled idl-code" data-dfn-for="USBAlternateInterface" data-dfn-type="attribute" data-export id="dom-usbalternateinterface-interface-slot"><code>[[interface]]</code></dfn>
       <td>&lt;always set in prose>
-      <td> The <code class="idl"><a data-link-type="idl" href="#usbinterface" id="ref-for-usbinterface⑥">USBInterface</a></code> object <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⑥">this</a> belongs to. 
+      <td> The <code class="idl"><a data-link-type="idl" href="#usbinterface" id="ref-for-usbinterface⑥">USBInterface</a></code> object <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⓪">this</a> belongs to. 
      <tr>
       <td><dfn class="dfn-paneled idl-code" data-dfn-for="USBAlternateInterface" data-dfn-type="attribute" data-export id="dom-usbalternateinterface-endpoints-slot"><code>[[endpoints]]</code></dfn>
       <td>An empty <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#idl-sequence" id="ref-for-idl-sequence①⓪">sequence</a> of <code class="idl"><a data-link-type="idl" href="#usbendpoint" id="ref-for-usbendpoint①">USBEndpoint</a></code>
@@ -3489,9 +3489,9 @@ increment <var>index</var> by 1 and continue.</p>
      The <dfn class="dfn-paneled idl-code" data-dfn-for="USBAlternateInterface" data-dfn-type="constructor" data-export data-lt="USBAlternateInterface(deviceInterface, alternateSetting)|constructor(deviceInterface, alternateSetting)" id="dom-usbalternateinterface-usbalternateinterface"><code>USBAlternateInterface(<var>deviceInterface</var>, <var>alternateSetting</var>)</code></dfn> constructor MUST, when called, perform the following steps: 
     <ol>
      <li data-md>
-      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⑦">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-interface-slot" id="ref-for-dom-usbalternateinterface-interface-slot①">[[interface]]</a></code> to <var>deviceInterface</var>.</p>
+      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦①">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-interface-slot" id="ref-for-dom-usbalternateinterface-interface-slot①">[[interface]]</a></code> to <var>deviceInterface</var>.</p>
      <li data-md>
-      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⑧">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-alternatesetting-slot" id="ref-for-dom-usbalternateinterface-alternatesetting-slot①">[[alternateSetting]]</a></code> to be <var>alternateSetting</var>.</p>
+      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦②">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-alternatesetting-slot" id="ref-for-dom-usbalternateinterface-alternatesetting-slot①">[[alternateSetting]]</a></code> to be <var>alternateSetting</var>.</p>
      <li data-md>
       <p>Let <var>descriptors</var> be the result of <a data-link-type="dfn" href="#find-a-list-of-endpoint-descriptors" id="ref-for-find-a-list-of-endpoint-descriptors">finding a list of endpoint descriptors</a> with <code>interfaceNumber</code> set to <var>deviceInterface</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-interfacenumber" id="ref-for-dom-usbinterface-interfacenumber③">interfaceNumber</a></code>, <code>alternateSetting</code> set to <var>alternateSetting</var>,
 and <code>configurationValue</code> set to <var>deviceInterface</var>.<code class="idl"><a data-link-type="idl" href="#dom-usbinterface-configuration-slot" id="ref-for-dom-usbinterface-configuration-slot④">[[configuration]]</a></code>.<code class="idl"><a data-link-type="idl" href="#dom-usbconfiguration-configurationvalue-slot" id="ref-for-dom-usbconfiguration-configurationvalue-slot④">[[configurationValue]]</a></code>.</p>
@@ -3508,9 +3508,9 @@ Control Transfer Type (i.e. bits <code>0..1</code> is <code>00</code> according 
 and <code class="idl"><a data-link-type="idl" href="#dom-usbdirection-in" id="ref-for-dom-usbdirection-in③">"in"</a></code> otherwise.</p>
        <li data-md>
         <p>Let <var>endpoint</var> be a <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#new" id="ref-for-new③">new</a> <code class="idl"><a data-link-type="idl" href="#usbendpoint" id="ref-for-usbendpoint②">USBEndpoint</a></code> object
-using <a data-link-type="functionish" href="#dom-usbendpoint-usbendpoint" id="ref-for-dom-usbendpoint-usbendpoint">USBEndpoint(<var>alternate</var>,<var>endpointNumber</var>,<var>direction</var>)</a> with <var>alternate</var> set to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⑨">this</a>, <var>endpointNumber</var> set to <code><var>endpointAddress</var> &amp; 0xF</code>, and <var>direction</var> set to <var>dir</var>.</p>
+using <a data-link-type="functionish" href="#dom-usbendpoint-usbendpoint" id="ref-for-dom-usbendpoint-usbendpoint">USBEndpoint(<var>alternate</var>,<var>endpointNumber</var>,<var>direction</var>)</a> with <var>alternate</var> set to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦③">this</a>, <var>endpointNumber</var> set to <code><var>endpointAddress</var> &amp; 0xF</code>, and <var>direction</var> set to <var>dir</var>.</p>
        <li data-md>
-        <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-append" id="ref-for-list-append⑥">Append</a> <var>endpoint</var> to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑧⓪">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints-slot" id="ref-for-dom-usbalternateinterface-endpoints-slot①">[[endpoints]]</a></code>.</p>
+        <p><a data-link-type="dfn" href="https://infra.spec.whatwg.org/#list-append" id="ref-for-list-append⑥">Append</a> <var>endpoint</var> to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦④">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints-slot" id="ref-for-dom-usbalternateinterface-endpoints-slot②">[[endpoints]]</a></code>.</p>
       </ol>
     </ol>
    </div>
@@ -3536,14 +3536,14 @@ of the <a data-link-type="dfn" href="#string-descriptor" id="ref-for-string-desc
 the <a data-link-type="dfn" href="#interface-descriptor" id="ref-for-interface-descriptor⑨">interface descriptor</a>, if defined.</p>
     <dt data-md><dfn class="dfn-paneled idl-code" data-dfn-for="USBAlternateInterface" data-dfn-type="attribute" data-export id="dom-usbalternateinterface-endpoints"><code>endpoints</code></dfn>, <span> of type FrozenArray&lt;<a data-link-type="idl-name" href="#usbendpoint" id="ref-for-usbendpoint③">USBEndpoint</a>>, readonly</span>
     <dd data-md>
-     <p>The <code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints" id="ref-for-dom-usbalternateinterface-endpoints②">endpoints</a></code> attribute SHALL contain a list of
+     <p>The <code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints" id="ref-for-dom-usbalternateinterface-endpoints①">endpoints</a></code> attribute SHALL contain a list of
 endpoints exposed by this interface. These endpoints SHALL by populated from
 the <a data-link-type="dfn" href="#endpoint-descriptor" id="ref-for-endpoint-descriptor①">endpoint descriptors</a> contained within this <a data-link-type="dfn" href="#interface-descriptor" id="ref-for-interface-descriptor①⓪">interface descriptor</a> and the number of elements in this sequence SHALL
 match the value of the <code>bNumEndpoints</code> field of the <a data-link-type="dfn" href="#interface-descriptor" id="ref-for-interface-descriptor①①">interface descriptor</a>.</p>
-     <p>The <code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints" id="ref-for-dom-usbalternateinterface-endpoints③">endpoints</a></code> getter steps are:</p>
+     <p>The <code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints" id="ref-for-dom-usbalternateinterface-endpoints②">endpoints</a></code> getter steps are:</p>
      <ol>
       <li data-md>
-       <p>Return <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑧①">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints-slot" id="ref-for-dom-usbalternateinterface-endpoints-slot②">[[endpoints]]</a></code>.</p>
+       <p>Return <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⑤">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbalternateinterface-endpoints-slot" id="ref-for-dom-usbalternateinterface-endpoints-slot③">[[endpoints]]</a></code>.</p>
      </ol>
    </dl>
    <h3 class="heading settled" data-level="6.6" id="usbendpoint-interface"><span class="secno">6.6. </span><span class="content">The USBEndpoint Interface</span><a class="self-link" href="#usbendpoint-interface"></a></h3>
@@ -3581,7 +3581,7 @@ slots</a> described in the following table:</p>
      <tr>
       <td><dfn class="dfn-paneled idl-code" data-dfn-for="USBEndpoint" data-dfn-type="attribute" data-export id="dom-usbendpoint-alternateinterface-slot"><code>[[alternateInterface]]</code></dfn>
       <td>&lt;always set in prose>
-      <td> The <code class="idl"><a data-link-type="idl" href="#usbalternateinterface" id="ref-for-usbalternateinterface①⓪">USBAlternateInterface</a></code> object <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑧②">this</a> belongs to. 
+      <td> The <code class="idl"><a data-link-type="idl" href="#usbalternateinterface" id="ref-for-usbalternateinterface①⓪">USBAlternateInterface</a></code> object <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⑥">this</a> belongs to. 
      <tr>
       <td><dfn class="dfn-paneled idl-code" data-dfn-for="USBEndpoint" data-dfn-type="attribute" data-export id="dom-usbendpoint-endpointaddress-slot"><code>[[endpointAddress]]</code></dfn>
       <td>&lt;always set in prose>
@@ -3612,11 +3612,11 @@ slots</a> described in the following table:</p>
      The <dfn class="idl-code" data-dfn-for="endpointNumber" data-dfn-type="constructor" data-export id="dom-endpointnumber-endpointnumber"><code>endpointNumber(<var>alternate</var>, <var>endpointNumber</var>, <var>direction</var>)</code><a class="self-link" href="#dom-endpointnumber-endpointnumber"></a></dfn> constructor MUST, when called, perform the following steps: 
     <ol>
      <li data-md>
-      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑧③">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbendpoint-alternateinterface-slot" id="ref-for-dom-usbendpoint-alternateinterface-slot②">[[alternateInterface]]</a></code> to <var>alternate</var>.</p>
+      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⑦">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbendpoint-alternateinterface-slot" id="ref-for-dom-usbendpoint-alternateinterface-slot②">[[alternateInterface]]</a></code> to <var>alternate</var>.</p>
      <li data-md>
       <p>Set <var>endpointAddress</var> to <code><var>endpointNumber</var> | 0x80</code> If <var>direction</var> is <code class="idl"><a data-link-type="idl" href="#dom-usbdirection-in" id="ref-for-dom-usbdirection-in④">"in"</a></code>, and <var>endpointNumber</var> otherwise.</p>
      <li data-md>
-      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑧④">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbendpoint-endpointaddress-slot" id="ref-for-dom-usbendpoint-endpointaddress-slot②">[[endpointAddress]]</a></code> to <var>endpointAddress</var>.</p>
+      <p>Set <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⑧">this</a>.<code class="idl"><a data-link-type="idl" href="#dom-usbendpoint-endpointaddress-slot" id="ref-for-dom-usbendpoint-endpointaddress-slot②">[[endpointAddress]]</a></code> to <var>endpointAddress</var>.</p>
     </ol>
    </div>
    <h4 class="heading settled" data-level="6.6.2" id="usbendpoint-attributes"><span class="secno">6.6.2. </span><span class="content">Attributes</span><a class="self-link" href="#usbendpoint-attributes"></a></h4>
@@ -3638,7 +3638,7 @@ by this endpoint.</p>
      <p>The <code class="idl"><a data-link-type="idl" href="#dom-usbendpoint-type" id="ref-for-dom-usbendpoint-type⑥">type</a></code> getter steps are:</p>
      <ol>
       <li data-md>
-       <p>Let <var>endpointDescriptor</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint-descriptor" id="ref-for-find-the-endpoint-descriptor">finding the endpoint descriptor</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑧⑤">this</a>.</p>
+       <p>Let <var>endpointDescriptor</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint-descriptor" id="ref-for-find-the-endpoint-descriptor">finding the endpoint descriptor</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑦⑨">this</a>.</p>
       <li data-md>
        <p>Let <var>attr</var> be <code>bmAttributes</code> of <var>endpointDescriptor</var>.</p>
       <li data-md>
@@ -3663,7 +3663,7 @@ of the SuperSpeed Endpoint Companion descriptor.</p>
      <p>The <code class="idl"><a data-link-type="idl" href="#dom-usbendpoint-packetsize" id="ref-for-dom-usbendpoint-packetsize②">packetSize</a></code> getter steps are:</p>
      <ol>
       <li data-md>
-       <p>Let <var>endpointDescriptor</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint-descriptor" id="ref-for-find-the-endpoint-descriptor①">finding the endpoint descriptor</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑧⑥">this</a>.</p>
+       <p>Let <var>endpointDescriptor</var> be the result of <a data-link-type="dfn" href="#find-the-endpoint-descriptor" id="ref-for-find-the-endpoint-descriptor①">finding the endpoint descriptor</a> with <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#this" id="ref-for-this⑧⓪">this</a>.</p>
       <li data-md>
        <p>Return <code>wMaxPacketSize</code> of <var>endpointDescriptor</var>.</p>
      </ol>
@@ -4031,7 +4031,7 @@ parameters in addition to a larger data payload that can be either IN or OUT.</p
    <li><a href="#find-a-list-of-endpoint-descriptors">find a list of endpoint descriptors</a><span>, in § 6.5</span>
    <li><a href="#find-if-the-interface-is-claimed">find if the interface is claimed</a><span>, in § 6.4</span>
    <li><a href="#find-the-alternate-index">find the alternate index</a><span>, in § 6.1</span>
-   <li><a href="#find-the-alternateinterface-for-the-current-alternate-setting">find the alternateInterface for the current alternate setting</a><span>, in § 6.4</span>
+   <li><a href="#find-the-alternate-interface-for-the-current-alternate-setting">find the alternate interface for the current alternate setting</a><span>, in § 6.4</span>
    <li><a href="#find-the-current-configuration">find the current configuration</a><span>, in § 6.1</span>
    <li><a href="#find-the-device-descriptor-for-the-connected-usb-device">find the device descriptor for the connected USB device</a><span>, in § 6.1</span>
    <li><a href="#find-the-endpoint">find the endpoint</a><span>, in § 6.1</span>
@@ -4625,19 +4625,19 @@ parameters in addition to a larger data payload that can be either IN or OUT.</p
    <ul>
     <li><a href="#ref-for-this">6.1. The USBDevice Interface</a> <a href="#ref-for-this①">(2)</a> <a href="#ref-for-this②">(3)</a> <a href="#ref-for-this③">(4)</a> <a href="#ref-for-this④">(5)</a> <a href="#ref-for-this⑤">(6)</a> <a href="#ref-for-this⑥">(7)</a> <a href="#ref-for-this⑦">(8)</a>
     <li><a href="#ref-for-this⑧">6.1.1. Attributes</a> <a href="#ref-for-this⑨">(2)</a>
-    <li><a href="#ref-for-this①⓪">6.1.2. Methods</a> <a href="#ref-for-this①①">(2)</a> <a href="#ref-for-this①②">(3)</a> <a href="#ref-for-this①③">(4)</a> <a href="#ref-for-this①④">(5)</a> <a href="#ref-for-this①⑤">(6)</a> <a href="#ref-for-this①⑥">(7)</a> <a href="#ref-for-this①⑦">(8)</a> <a href="#ref-for-this①⑧">(9)</a> <a href="#ref-for-this①⑨">(10)</a> <a href="#ref-for-this②⓪">(11)</a> <a href="#ref-for-this②①">(12)</a> <a href="#ref-for-this②②">(13)</a> <a href="#ref-for-this②③">(14)</a> <a href="#ref-for-this②④">(15)</a> <a href="#ref-for-this②⑤">(16)</a> <a href="#ref-for-this②⑥">(17)</a> <a href="#ref-for-this②⑦">(18)</a> <a href="#ref-for-this②⑧">(19)</a> <a href="#ref-for-this②⑨">(20)</a> <a href="#ref-for-this③⓪">(21)</a> <a href="#ref-for-this③①">(22)</a> <a href="#ref-for-this③②">(23)</a> <a href="#ref-for-this③③">(24)</a> <a href="#ref-for-this③④">(25)</a> <a href="#ref-for-this③⑤">(26)</a> <a href="#ref-for-this③⑥">(27)</a> <a href="#ref-for-this③⑦">(28)</a> <a href="#ref-for-this③⑧">(29)</a> <a href="#ref-for-this③⑨">(30)</a> <a href="#ref-for-this④⓪">(31)</a> <a href="#ref-for-this④①">(32)</a> <a href="#ref-for-this④②">(33)</a> <a href="#ref-for-this④③">(34)</a> <a href="#ref-for-this④④">(35)</a> <a href="#ref-for-this④⑤">(36)</a> <a href="#ref-for-this④⑥">(37)</a> <a href="#ref-for-this④⑦">(38)</a> <a href="#ref-for-this④⑧">(39)</a> <a href="#ref-for-this④⑨">(40)</a> <a href="#ref-for-this⑤⓪">(41)</a> <a href="#ref-for-this⑤①">(42)</a> <a href="#ref-for-this⑤②">(43)</a> <a href="#ref-for-this⑤③">(44)</a> <a href="#ref-for-this⑤④">(45)</a> <a href="#ref-for-this⑤⑤">(46)</a> <a href="#ref-for-this⑤⑥">(47)</a> <a href="#ref-for-this⑤⑦">(48)</a> <a href="#ref-for-this⑤⑧">(49)</a> <a href="#ref-for-this⑤⑨">(50)</a>
-    <li><a href="#ref-for-this⑥⓪">6.3. The USBConfiguration Interface</a>
-    <li><a href="#ref-for-this⑥①">6.3.1. Constructors</a> <a href="#ref-for-this⑥②">(2)</a> <a href="#ref-for-this⑥③">(3)</a> <a href="#ref-for-this⑥④">(4)</a>
-    <li><a href="#ref-for-this⑥⑤">6.3.2. Attributes</a>
-    <li><a href="#ref-for-this⑥⑥">6.4. The USBInterface Interface</a>
-    <li><a href="#ref-for-this⑥⑦">6.4.1. Constructors</a> <a href="#ref-for-this⑥⑧">(2)</a> <a href="#ref-for-this⑥⑨">(3)</a> <a href="#ref-for-this⑦⓪">(4)</a> <a href="#ref-for-this⑦①">(5)</a>
-    <li><a href="#ref-for-this⑦②">6.4.2. Attributes</a> <a href="#ref-for-this⑦③">(2)</a> <a href="#ref-for-this⑦④">(3)</a> <a href="#ref-for-this⑦⑤">(4)</a>
-    <li><a href="#ref-for-this⑦⑥">6.5. The USBAlternateInterface Interface</a>
-    <li><a href="#ref-for-this⑦⑦">6.5.1. Constructors</a> <a href="#ref-for-this⑦⑧">(2)</a> <a href="#ref-for-this⑦⑨">(3)</a> <a href="#ref-for-this⑧⓪">(4)</a>
-    <li><a href="#ref-for-this⑧①">6.5.2. Attributes</a>
-    <li><a href="#ref-for-this⑧②">6.6. The USBEndpoint Interface</a>
-    <li><a href="#ref-for-this⑧③">6.6.1. Constructors</a> <a href="#ref-for-this⑧④">(2)</a>
-    <li><a href="#ref-for-this⑧⑤">6.6.2. Attributes</a> <a href="#ref-for-this⑧⑥">(2)</a>
+    <li><a href="#ref-for-this①⓪">6.1.2. Methods</a> <a href="#ref-for-this①①">(2)</a> <a href="#ref-for-this①②">(3)</a> <a href="#ref-for-this①③">(4)</a> <a href="#ref-for-this①④">(5)</a> <a href="#ref-for-this①⑤">(6)</a> <a href="#ref-for-this①⑥">(7)</a> <a href="#ref-for-this①⑦">(8)</a> <a href="#ref-for-this①⑧">(9)</a> <a href="#ref-for-this①⑨">(10)</a> <a href="#ref-for-this②⓪">(11)</a> <a href="#ref-for-this②①">(12)</a> <a href="#ref-for-this②②">(13)</a> <a href="#ref-for-this②③">(14)</a> <a href="#ref-for-this②④">(15)</a> <a href="#ref-for-this②⑤">(16)</a> <a href="#ref-for-this②⑥">(17)</a> <a href="#ref-for-this②⑦">(18)</a> <a href="#ref-for-this②⑧">(19)</a> <a href="#ref-for-this②⑨">(20)</a> <a href="#ref-for-this③⓪">(21)</a> <a href="#ref-for-this③①">(22)</a> <a href="#ref-for-this③②">(23)</a> <a href="#ref-for-this③③">(24)</a> <a href="#ref-for-this③④">(25)</a> <a href="#ref-for-this③⑤">(26)</a> <a href="#ref-for-this③⑥">(27)</a> <a href="#ref-for-this③⑦">(28)</a> <a href="#ref-for-this③⑧">(29)</a> <a href="#ref-for-this③⑨">(30)</a> <a href="#ref-for-this④⓪">(31)</a> <a href="#ref-for-this④①">(32)</a> <a href="#ref-for-this④②">(33)</a> <a href="#ref-for-this④③">(34)</a> <a href="#ref-for-this④④">(35)</a> <a href="#ref-for-this④⑤">(36)</a> <a href="#ref-for-this④⑥">(37)</a> <a href="#ref-for-this④⑦">(38)</a> <a href="#ref-for-this④⑧">(39)</a> <a href="#ref-for-this④⑨">(40)</a> <a href="#ref-for-this⑤⓪">(41)</a> <a href="#ref-for-this⑤①">(42)</a> <a href="#ref-for-this⑤②">(43)</a> <a href="#ref-for-this⑤③">(44)</a>
+    <li><a href="#ref-for-this⑤④">6.3. The USBConfiguration Interface</a>
+    <li><a href="#ref-for-this⑤⑤">6.3.1. Constructors</a> <a href="#ref-for-this⑤⑥">(2)</a> <a href="#ref-for-this⑤⑦">(3)</a> <a href="#ref-for-this⑤⑧">(4)</a>
+    <li><a href="#ref-for-this⑤⑨">6.3.2. Attributes</a>
+    <li><a href="#ref-for-this⑥⓪">6.4. The USBInterface Interface</a>
+    <li><a href="#ref-for-this⑥①">6.4.1. Constructors</a> <a href="#ref-for-this⑥②">(2)</a> <a href="#ref-for-this⑥③">(3)</a> <a href="#ref-for-this⑥④">(4)</a> <a href="#ref-for-this⑥⑤">(5)</a>
+    <li><a href="#ref-for-this⑥⑥">6.4.2. Attributes</a> <a href="#ref-for-this⑥⑦">(2)</a> <a href="#ref-for-this⑥⑧">(3)</a> <a href="#ref-for-this⑥⑨">(4)</a>
+    <li><a href="#ref-for-this⑦⓪">6.5. The USBAlternateInterface Interface</a>
+    <li><a href="#ref-for-this⑦①">6.5.1. Constructors</a> <a href="#ref-for-this⑦②">(2)</a> <a href="#ref-for-this⑦③">(3)</a> <a href="#ref-for-this⑦④">(4)</a>
+    <li><a href="#ref-for-this⑦⑤">6.5.2. Attributes</a>
+    <li><a href="#ref-for-this⑦⑥">6.6. The USBEndpoint Interface</a>
+    <li><a href="#ref-for-this⑦⑦">6.6.1. Constructors</a> <a href="#ref-for-this⑦⑧">(2)</a>
+    <li><a href="#ref-for-this⑦⑨">6.6.2. Attributes</a> <a href="#ref-for-this⑧⓪">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-idl-undefined">
@@ -4784,7 +4784,7 @@ parameters in addition to a larger data payload that can be either IN or OUT.</p
    <dt id="biblio-infra">[INFRA]
    <dd>Anne van Kesteren; Domenic Denicola. <a href="https://infra.spec.whatwg.org/"><cite>Infra Standard</cite></a>. Living Standard. URL: <a href="https://infra.spec.whatwg.org/">https://infra.spec.whatwg.org/</a>
    <dt id="biblio-permissions">[PERMISSIONS]
-   <dd>Marcos Caceres; Mike Taylor. <a href="https://www.w3.org/TR/permissions/"><cite>Permissions</cite></a>. 15 February 2022. WD. URL: <a href="https://www.w3.org/TR/permissions/">https://www.w3.org/TR/permissions/</a>
+   <dd>Marcos Caceres; Mike Taylor. <a href="https://www.w3.org/TR/permissions/"><cite>Permissions</cite></a>. 22 February 2022. WD. URL: <a href="https://www.w3.org/TR/permissions/">https://www.w3.org/TR/permissions/</a>
    <dt id="biblio-permissions-policy-1">[PERMISSIONS-POLICY-1]
    <dd>Ian Clelland. <a href="https://www.w3.org/TR/permissions-policy-1/"><cite>Permissions Policy</cite></a>. 16 July 2020. WD. URL: <a href="https://www.w3.org/TR/permissions-policy-1/">https://www.w3.org/TR/permissions-policy-1/</a>
    <dt id="biblio-permissions-request">[PERMISSIONS-REQUEST]
@@ -5913,11 +5913,11 @@ parameters in addition to a larger data payload that can be either IN or OUT.</p
     <li><a href="#ref-for-find-if-the-interface-is-claimed⑤">6.4.2. Attributes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="find-the-alternateinterface-for-the-current-alternate-setting">
-   <b><a href="#find-the-alternateinterface-for-the-current-alternate-setting">#find-the-alternateinterface-for-the-current-alternate-setting</a></b><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="find-the-alternate-interface-for-the-current-alternate-setting">
+   <b><a href="#find-the-alternate-interface-for-the-current-alternate-setting">#find-the-alternate-interface-for-the-current-alternate-setting</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-find-the-alternateinterface-for-the-current-alternate-setting">6.1. The USBDevice Interface</a> <a href="#ref-for-find-the-alternateinterface-for-the-current-alternate-setting①">(2)</a>
-    <li><a href="#ref-for-find-the-alternateinterface-for-the-current-alternate-setting②">6.4.2. Attributes</a>
+    <li><a href="#ref-for-find-the-alternate-interface-for-the-current-alternate-setting">6.1. The USBDevice Interface</a> <a href="#ref-for-find-the-alternate-interface-for-the-current-alternate-setting①">(2)</a>
+    <li><a href="#ref-for-find-the-alternate-interface-for-the-current-alternate-setting②">6.4.2. Attributes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-usbinterface-usbinterface">
@@ -5978,9 +5978,9 @@ parameters in addition to a larger data payload that can be either IN or OUT.</p
   <aside class="dfn-panel" data-for="dom-usbalternateinterface-endpoints-slot">
    <b><a href="#dom-usbalternateinterface-endpoints-slot">#dom-usbalternateinterface-endpoints-slot</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-usbalternateinterface-endpoints-slot">6.1. The USBDevice Interface</a>
-    <li><a href="#ref-for-dom-usbalternateinterface-endpoints-slot①">6.5.1. Constructors</a>
-    <li><a href="#ref-for-dom-usbalternateinterface-endpoints-slot②">6.5.2. Attributes</a>
+    <li><a href="#ref-for-dom-usbalternateinterface-endpoints-slot">6.1. The USBDevice Interface</a> <a href="#ref-for-dom-usbalternateinterface-endpoints-slot①">(2)</a>
+    <li><a href="#ref-for-dom-usbalternateinterface-endpoints-slot②">6.5.1. Constructors</a>
+    <li><a href="#ref-for-dom-usbalternateinterface-endpoints-slot③">6.5.2. Attributes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-usbalternateinterface-alternatesetting-slot">
@@ -6044,9 +6044,8 @@ parameters in addition to a larger data payload that can be either IN or OUT.</p
   <aside class="dfn-panel" data-for="dom-usbalternateinterface-endpoints">
    <b><a href="#dom-usbalternateinterface-endpoints">#dom-usbalternateinterface-endpoints</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-usbalternateinterface-endpoints">6.1. The USBDevice Interface</a>
-    <li><a href="#ref-for-dom-usbalternateinterface-endpoints①">6.5. The USBAlternateInterface Interface</a>
-    <li><a href="#ref-for-dom-usbalternateinterface-endpoints②">6.5.2. Attributes</a> <a href="#ref-for-dom-usbalternateinterface-endpoints③">(2)</a>
+    <li><a href="#ref-for-dom-usbalternateinterface-endpoints">6.5. The USBAlternateInterface Interface</a>
+    <li><a href="#ref-for-dom-usbalternateinterface-endpoints①">6.5.2. Attributes</a> <a href="#ref-for-dom-usbalternateinterface-endpoints②">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="enumdef-usbdirection">
